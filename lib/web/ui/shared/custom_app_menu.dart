@@ -14,9 +14,12 @@ class CustomAppMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final brightness = MediaQuery.of(context).platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
     return GlassMorphism(
       blur: 10,
-      color: ColorsApp.appLight,
+      color:
+          isDarkMode ? ColorsApp.appDark.withOpacity(.8) : ColorsApp.appLight,
       opacity: 0.2,
       borderRadius: BorderRadius.circular(5),
       child: LayoutBuilder(

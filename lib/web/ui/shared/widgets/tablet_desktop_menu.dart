@@ -3,7 +3,7 @@ import 'package:flutter_app/locator.dart';
 import 'package:flutter_app/web/router/route_name.dart';
 import 'package:flutter_app/web/services/navigation_service.dart';
 import 'package:flutter_app/web/ui/shared/custom_flat_button.dart';
-import 'package:flutter_app/web/utils/assets_app.dart';
+import 'package:flutter_app/web/ui/shared/widgets/logo_web.dart';
 
 class TabletDesktopMenu extends StatelessWidget {
   const TabletDesktopMenu({
@@ -20,17 +20,14 @@ class TabletDesktopMenu extends StatelessWidget {
       width: double.infinity,
       child: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(
+          const Padding(
+            padding: EdgeInsets.only(
               right: 20,
             ),
             child: SizedBox(
               width: 180,
-              height: 40,
-              child: Image.asset(
-                AssetsApp.logo,
-                fit: BoxFit.fitHeight,
-              ),
+              height: 30,
+              child: LogoWeb(),
             ),
           ),
           CustomFlatButton(

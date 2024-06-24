@@ -12,6 +12,8 @@ class TextWithBoxStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final brightness = MediaQuery.of(context).platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
     return Stack(
       alignment: alignment,
       children: [
@@ -34,9 +36,9 @@ class TextWithBoxStack extends StatelessWidget {
           left: 10.0,
           child: Text(
             text,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w600,
-              color: ColorsApp.appDark,
+              color: isDarkMode ? ColorsApp.appGray : ColorsApp.appDark,
               fontSize: 12.0,
             ),
           ),

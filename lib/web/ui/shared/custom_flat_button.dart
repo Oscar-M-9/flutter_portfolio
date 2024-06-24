@@ -13,12 +13,14 @@ class CustomFlatButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final brightness = MediaQuery.of(context).platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 3.0,
       ),
       child: OutlinedButton(
-        style: _buttonStyle(),
+        style: _buttonStyle(isDarkMode),
         onPressed: onPressed,
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -37,7 +39,7 @@ class CustomFlatButton extends StatelessWidget {
     );
   }
 
-  ButtonStyle _buttonStyle() {
+  ButtonStyle _buttonStyle(bool isDarkMode) {
     return ButtonStyle(
       overlayColor: MaterialStateProperty.resolveWith<Color?>(
         (Set<MaterialState> states) {
@@ -68,7 +70,7 @@ class CustomFlatButton extends StatelessWidget {
             return ColorsApp.colorRajah400;
           }
           // return ColorsApp.colorRajah950.withOpacity(.5);
-          return ColorsApp.appDark;
+          return isDarkMode ? ColorsApp.appGray : ColorsApp.appDark;
         },
       ),
       backgroundColor: MaterialStateProperty.resolveWith(

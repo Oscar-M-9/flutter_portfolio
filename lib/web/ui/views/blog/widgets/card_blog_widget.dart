@@ -32,6 +32,8 @@ class _CardBlogWidgetState extends State<CardBlogWidget> {
   @override
   Widget build(BuildContext context) {
     String formattedDate = DateFormat('dd MMM, yyyy').format(widget.date);
+    final brightness = MediaQuery.of(context).platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -72,7 +74,7 @@ class _CardBlogWidgetState extends State<CardBlogWidget> {
             width: 280,
             height: 370,
             decoration: BoxDecoration(
-              color: _isHovered ? ColorsApp.colorRajah50 : ColorsApp.appLight2,
+              color: _backgroundDecoration(_isHovered, isDarkMode),
               borderRadius: BorderRadius.circular(15),
               border: Border.all(
                 width: 4,
@@ -84,14 +86,36 @@ class _CardBlogWidgetState extends State<CardBlogWidget> {
               children: [
                 _ImageBlog(widget: widget),
                 _PublishBlog(formattedDate: formattedDate, widget: widget),
-                _TitleBlog(widget: widget),
-                _DescriptionBlog(widget: widget),
+                _TitleBlog(
+                  widget: widget,
+                  isDarkMode: isDarkMode,
+                  isHovered: _isHovered,
+                ),
+                _DescriptionBlog(
+                  widget: widget,
+                ),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+}
+
+Color _backgroundDecoration(bool isHovered, bool isDarkMode) {
+  if (isDarkMode) {
+    return ColorsApp.appDark;
+  } else {
+    return isHovered ? ColorsApp.colorRajah50 : ColorsApp.appLight2;
+  }
+}
+
+Color _foregroundText(bool isHovered, bool isDarkMode) {
+  if (isDarkMode) {
+    return ColorsApp.appLight;
+  } else {
+    return ColorsApp.appDark;
   }
 }
 
@@ -161,11 +185,14 @@ class _ImageBlog extends StatelessWidget {
 }
 
 class _TitleBlog extends StatelessWidget {
+  final CardBlogWidget widget;
+  final bool isDarkMode;
+  final bool isHovered;
   const _TitleBlog({
     required this.widget,
+    required this.isDarkMode,
+    required this.isHovered,
   });
-
-  final CardBlogWidget widget;
 
   @override
   Widget build(BuildContext context) {
@@ -178,6 +205,7 @@ class _TitleBlog extends StatelessWidget {
         widget.title,
         style: Theme.of(context).textTheme.titleSmall?.copyWith(
               fontWeight: FontWeight.w600,
+              color: _foregroundText(isHovered, isDarkMode),
             ),
         maxLines: 2,
         overflow: TextOverflow.ellipsis,

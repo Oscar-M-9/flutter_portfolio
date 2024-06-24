@@ -7,8 +7,8 @@ import 'package:flutter_app/web/services/navigation_service.dart';
 import 'package:flutter_app/web/ui/shared/custom_flat_button.dart';
 import 'package:flutter_app/web/ui/shared/custom_icon_button.dart';
 import 'package:flutter_app/web/ui/shared/widgets/glass_morphism.dart';
+import 'package:flutter_app/web/ui/shared/widgets/logo_web.dart';
 import 'package:flutter_app/web/utils/colors_app.dart';
-import 'package:flutter_app/web/utils/assets_app.dart';
 
 class MobileMenu extends StatelessWidget {
   final MenuNotifier provider;
@@ -28,13 +28,10 @@ class MobileMenu extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
+          const SizedBox(
             width: 150,
-            height: 40,
-            child: Image.asset(
-              AssetsApp.logo,
-              fit: BoxFit.fitHeight,
-            ),
+            height: 30,
+            child: LogoWeb(),
           ),
           CustomIconButton(
             icon: provider.isOpen ? Icons.close_rounded : Icons.menu_rounded,

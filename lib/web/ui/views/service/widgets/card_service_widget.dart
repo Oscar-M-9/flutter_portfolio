@@ -26,6 +26,8 @@ class _CardServiceWidgetState extends State<CardServiceWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final brightness = MediaQuery.of(context).platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       onHover: (_) {
@@ -41,7 +43,7 @@ class _CardServiceWidgetState extends State<CardServiceWidget> {
       child: Container(
         width: 250,
         decoration: BoxDecoration(
-          color: _isHovered ? ColorsApp.colorRajah50 : ColorsApp.appLight2,
+          color: _backgroundDecoration(_isHovered, isDarkMode),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Padding(
@@ -53,7 +55,9 @@ class _CardServiceWidgetState extends State<CardServiceWidget> {
                 child: SquareBorder(
                   height: 120,
                   width: 120,
-                  borderColor: ColorsApp.colorRajah200,
+                  borderColor: isDarkMode
+                      ? ColorsApp.colorRajah400
+                      : ColorsApp.colorRajah200,
                   borderWidth: 3.0,
                   borderRadius: const BorderRadius.only(
                     bottomRight: Radius.circular(60),
@@ -72,6 +76,7 @@ class _CardServiceWidgetState extends State<CardServiceWidget> {
                   widget.title,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
+                        color: _foregroundText(_isHovered, isDarkMode),
                       ),
                 ),
               ),
@@ -79,7 +84,8 @@ class _CardServiceWidgetState extends State<CardServiceWidget> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   widget.description,
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: _foregroundText2(_isHovered, isDarkMode)),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -98,9 +104,9 @@ class _CardServiceWidgetState extends State<CardServiceWidget> {
                       overlayColor:
                           const MaterialStatePropertyAll(ColorsApp.appYellow)),
                   onPressed: widget.onPressed,
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_rounded,
-                    color: ColorsApp.appDark,
+                    color: isDarkMode ? ColorsApp.appLight : ColorsApp.appDark,
                   ),
                 ),
               )
@@ -111,5 +117,29 @@ class _CardServiceWidgetState extends State<CardServiceWidget> {
         effects: _isHovered ? const [ShaderEffect()] : [],
       ),
     );
+  }
+
+  Color _backgroundDecoration(bool isHovered, bool isDarkMode) {
+    if (isDarkMode) {
+      return isHovered ? ColorsApp.colorRajah200 : ColorsApp.appDark;
+    } else {
+      return isHovered ? ColorsApp.colorRajah50 : ColorsApp.appLight2;
+    }
+  }
+
+  Color _foregroundText(bool isHovered, bool isDarkMode) {
+    if (isDarkMode) {
+      return isHovered ? ColorsApp.appDark : ColorsApp.appLight;
+    } else {
+      return ColorsApp.appDark;
+    }
+  }
+
+  Color _foregroundText2(bool isHovered, bool isDarkMode) {
+    if (isDarkMode) {
+      return isHovered ? ColorsApp.appDark : ColorsApp.appLight;
+    } else {
+      return ColorsApp.appGray3;
+    }
   }
 }

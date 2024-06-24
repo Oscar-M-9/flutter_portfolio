@@ -3,7 +3,7 @@ import 'package:flutter_app/web/ui/shared/widgets/max_width.dart';
 import 'package:flutter_app/web/ui/views/footer/footer_view.dart';
 import 'package:flutter_app/web/ui/views/home/section_1_home_view.dart';
 import 'package:flutter_app/web/ui/views/home/section_2_home_view.dart';
-import 'package:flutter_app/web/ui/views/home/widgets/square_stack_widget.dart';
+import 'package:flutter_app/web/ui/shared/widgets/square_stack_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

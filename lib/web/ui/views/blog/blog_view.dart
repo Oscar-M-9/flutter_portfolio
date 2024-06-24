@@ -83,15 +83,17 @@ class BlogWiew extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
+        final brightness = MediaQuery.of(context).platformBrightness;
+        final isDarkMode = brightness == Brightness.dark;
         return Stack(
           children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20)
                   .copyWith(top: 40),
               height: MediaQuery.of(context).size.height * 0.7,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                color: isDarkMode ? ColorsApp.appDark : Colors.white,
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15.0),
                   topRight: Radius.circular(15.0),
                 ),
@@ -131,9 +133,9 @@ class BlogWiew extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: const Icon(
+                icon: Icon(
                   Icons.close_rounded,
-                  color: ColorsApp.appDark,
+                  color: isDarkMode ? ColorsApp.appLight : ColorsApp.appDark,
                 ),
               ),
             ),

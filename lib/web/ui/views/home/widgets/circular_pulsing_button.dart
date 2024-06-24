@@ -43,6 +43,8 @@ class CircularPulsingButtonState extends State<CircularPulsingButton>
 
   @override
   Widget build(BuildContext context) {
+    final brightness = MediaQuery.of(context).platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       onEnter: (_) {
@@ -106,14 +108,16 @@ class CircularPulsingButtonState extends State<CircularPulsingButton>
                       size: 30.0,
                     ),
                   ),
-                  const FittedBox(
+                  FittedBox(
                     fit: BoxFit.contain,
                     child: Text(
                       'Contáctame',
                       style: TextStyle(
                         fontSize: 10.0,
                         fontWeight: FontWeight.w600,
-                        color: ColorsApp.colorRajah900,
+                        color: isDarkMode
+                            ? ColorsApp.colorRajah300
+                            : ColorsApp.colorRajah900,
                       ),
                     ),
                   ),

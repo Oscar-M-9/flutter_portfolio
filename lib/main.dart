@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/locator.dart';
 import 'package:flutter_app/web/router/route_name.dart';
 import 'package:flutter_app/web/router/router.dart';
@@ -50,10 +51,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: ConstansApp.author,
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         primarySwatch: ColorsApp.primeColor,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: ColorsApp.appYellow),
         useMaterial3: true,
         fontFamily: 'Poppins',
         textTheme: TextTheme(
@@ -104,6 +106,67 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Poppins',
             fontSize: 42.0,
             fontWeight: FontWeight.bold,
+          ),
+          displaySmall: const TextStyle(fontFamily: 'Poppins'),
+        ),
+      ),
+      darkTheme: ThemeData(
+        scaffoldBackgroundColor: Colors.black,
+        primarySwatch: ColorsApp.primeColor,
+        colorScheme: ColorScheme.fromSeed(seedColor: ColorsApp.appYellow),
+        useMaterial3: true,
+        fontFamily: 'Poppins',
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(
+            fontFamily: 'Poppins',
+            color: ColorsApp.appLight.withOpacity(.8),
+            fontWeight: FontWeight.w500,
+            height: 1,
+          ),
+          bodyMedium: const TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 13.0,
+            fontWeight: FontWeight.w300,
+            color: ColorsApp.appGray,
+          ),
+          bodySmall: const TextStyle(
+            fontFamily: 'Poppins',
+            color: ColorsApp.appLight,
+            fontSize: 10,
+            fontWeight: FontWeight.w200,
+            height: 1,
+          ),
+          headlineLarge: const TextStyle(
+            fontFamily: 'Poppins',
+          ),
+          headlineMedium: const TextStyle(
+            fontFamily: 'Poppins',
+          ),
+          headlineSmall: TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 32.0,
+            fontWeight: FontWeight.w600,
+            color: ColorsApp.appLight.withOpacity(0.8),
+          ),
+          titleLarge: const TextStyle(
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w600,
+            color: ColorsApp.appLight,
+          ),
+          titleMedium: const TextStyle(
+            fontFamily: 'Poppins',
+            color: ColorsApp.appLight,
+          ),
+          titleSmall: const TextStyle(fontFamily: 'Poppins'),
+          labelLarge: const TextStyle(fontFamily: 'Poppins'),
+          labelMedium: const TextStyle(fontFamily: 'Poppins'),
+          labelSmall: const TextStyle(fontFamily: 'Poppins'),
+          displayLarge: const TextStyle(fontFamily: 'Poppins'),
+          displayMedium: const TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 42.0,
+            fontWeight: FontWeight.bold,
+            color: ColorsApp.appLight2,
           ),
           displaySmall: const TextStyle(fontFamily: 'Poppins'),
         ),

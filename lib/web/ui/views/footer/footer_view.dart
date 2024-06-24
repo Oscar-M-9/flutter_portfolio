@@ -1,6 +1,5 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/web/ui/shared/widgets/square_border.dart';
+import 'package:flutter_app/web/ui/shared/widgets/logo_web.dart';
 import 'package:flutter_app/web/utils/colors_app.dart';
 import 'package:flutter_app/web/utils/constants_app.dart';
 import 'package:flutter_app/web/utils/social_icons_icons.dart';
@@ -17,32 +16,37 @@ class FooterView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  AutoSizeText(
-                    'OSMI',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  AutoSizeText(
-                    'dev',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                ],
-              ),
-              const SquareBorder(
-                margin: EdgeInsets.only(left: 5),
-                height: 50,
-                width: 50,
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(30),
-                ),
-              ),
-            ],
+          const SizedBox(
+            width: 180,
+            height: 50,
+            child: LogoWeb(),
           ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     Column(
+          //       crossAxisAlignment: CrossAxisAlignment.end,
+          //       children: [
+          //         AutoSizeText(
+          //           'OSMI',
+          //           style: Theme.of(context).textTheme.titleLarge,
+          //         ),
+          //         AutoSizeText(
+          //           'dev',
+          //           style: Theme.of(context).textTheme.bodyLarge,
+          //         ),
+          //       ],
+          //     ),
+          //     const SquareBorder(
+          //       margin: EdgeInsets.only(left: 5),
+          //       height: 50,
+          //       width: 50,
+          //       borderRadius: BorderRadius.only(
+          //         bottomRight: Radius.circular(30),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           const SizedBox(
             height: 20,
           ),
