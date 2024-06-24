@@ -113,11 +113,8 @@ class ContactView extends StatelessWidget {
                                   path: ConstansApp.email,
                                   query: encodeQueryParameters(<String, String>{
                                     'subject': '📢 Servicio - Osmi Dev 👨‍💻 ',
-                                    'body': '''Hola 👋!
-                                        Mi nombre es: ${nameController.text}.
-                                        Mi correo es: ${emailController.text}.
-                                        
-                                        ${messageController.text}''',
+                                    'body':
+                                        'Hola 👋! \n-Mi nombre es: ${nameController.text}.\n-Mi correo es: ${emailController.text}.\n\n${messageController.text}',
                                   }),
                                 );
 

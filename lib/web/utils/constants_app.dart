@@ -5,13 +5,28 @@ import 'package:flutter_app/web/utils/assets_app.dart';
 
 class ConstansApp {
   //* =========================
-  //*        Home
+  //*        Seo
   //* =========================
   static const String author = "Oscar Chavesta";
-  static const String email = "oscar.ch.dev@gmail.com";
-  static const String title = "Porfolio";
   static const String description =
       "Porfolio Web personal de Oscar Chavesta Caicedo";
+  static const String keywords =
+      "Porfolio Web, Oscar Chavesta Caicedo, Oscar Chavesta, Oscar, Chavesta, Oscar Miguel, Desarrollador, Developer, Osmi Dev, Osmi, Oscar Chavesta Developer, Frontend Developer, Backend Developer, Mobile Developer,Fullstack Developer";
+
+  static const String facebookAppID = "998867785208658";
+  static const String ogTitle = "Oscar Chavesta";
+  static const String ogDescription = "Fullstack Developer";
+  static String ogImage = AssetsApp.ogImage;
+
+  static const String twitterTitle = "Oscar Chavesta";
+  static const String twitterDescription = "Fullstack Developer";
+  static String twitterImage = AssetsApp.ogImage;
+
+  //* =========================
+  //*        Home
+  //* =========================
+  static const String email = "oscar.ch.dev@gmail.com";
+  static const String title = "Porfolio";
   static const String vocation = "App & Fullstack Developer";
   //
   static const String titleAbout = "Desarrollador fullstack ";

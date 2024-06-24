@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/locator.dart';
 import 'package:flutter_app/web/router/route_name.dart';
@@ -6,10 +7,14 @@ import 'package:flutter_app/web/services/navigation_service.dart';
 import 'package:flutter_app/web/ui/layout/main_layout_page.dart';
 import 'package:flutter_app/web/utils/colors_app.dart';
 import 'package:flutter_app/web/utils/constants_app.dart';
+import 'package:meta_seo/meta_seo.dart';
 
 void main() {
   setupLocator();
   Flurorouter.configureRoutes();
+  if (kIsWeb) {
+    MetaSEO().config();
+  }
   runApp(const MyApp());
 }
 
