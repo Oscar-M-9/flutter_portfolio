@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -26,7 +26,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: bluefireteam/flutter-gh-pages@v8
         with:
-          baseHref: "/flutter_portfolio/"
+          baseHref: /flutter_portfolio/
           webRenderer: canvaskit
 # References
 # https://github.com/codetricity/dot_guide_pano/blob/main/.github/workflows/gh-pages.yaml
