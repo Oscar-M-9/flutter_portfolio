@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/locator.dart';
 import 'package:flutter_app/web/router/route_name.dart';
@@ -7,14 +6,10 @@ import 'package:flutter_app/web/services/navigation_service.dart';
 import 'package:flutter_app/web/ui/layout/main_layout_page.dart';
 import 'package:flutter_app/web/utils/colors_app.dart';
 import 'package:flutter_app/web/utils/constants_app.dart';
-import 'package:meta_seo/meta_seo.dart';
 
 void main() {
   setupLocator();
   Flurorouter.configureRoutes();
-  if (kIsWeb) {
-    MetaSEO().config();
-  }
   runApp(const MyApp());
 }
 
@@ -24,6 +19,34 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // Add MetaSEO just into Web platform condition
+    // if (kIsWeb) {
+    //   // Define MetaSEO object
+    //   MetaSEO meta = MetaSEO();
+    //   // add meta seo data for web app as you want
+    //   meta.author(author: ConstansApp.author);
+    //   meta.description(description: ConstansApp.description);
+    //   meta.keywords(keywords: ConstansApp.keywords);
+
+    //   // add meta seo open graph tags as you want
+    //   meta.facebookAppID(facebookAppID: ConstansApp.facebookAppID);
+    //   meta.ogTitle(ogTitle: ConstansApp.ogTitle);
+    //   meta.ogDescription(ogDescription: ConstansApp.ogDescription);
+    //   meta.ogImage(ogImage: AssetsApp.ogImage);
+
+    //   // here you can add any tags does not exist in the package as this
+    //   // meta.propertyContent(property: 'og:site_name', content: 'example');
+
+    //   // or if you want to add twitter card meta tags just as the following
+    //   meta.twitterCard(twitterCard: TwitterCard.summaryLargeImage);
+    //   meta.twitterTitle(twitterTitle: ConstansApp.twitterTitle);
+    //   meta.twitterDescription(
+    //       twitterDescription: ConstansApp.twitterDescription);
+    //   meta.twitterImage(twitterImage: AssetsApp.ogImage);
+
+    //   // here you can add any tags does not exist in the package as this
+    //   // meta.nameContent(name: 'twitter:site', content: '@mouaz_m_shahmeh');
+    // }
     return MaterialApp(
       title: ConstansApp.author,
       debugShowCheckedModeBanner: false,

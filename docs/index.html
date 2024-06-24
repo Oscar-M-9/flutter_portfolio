@@ -29,12 +29,41 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <title>flutter_app</title>
+    <meta name="author" content="Oscar Chavesta" />
+    <meta
+      name="description"
+      content="Porfolio Web personal de Oscar Chavesta Caicedo"
+    />
+    <meta
+      name="keywords"
+      content="Porfolio Web, Oscar Chavesta Caicedo, Oscar Chavesta, Oscar, Chavesta, Oscar Miguel, Desarrollador, Developer, Osmi Dev, Osmi, Oscar Chavesta Developer, Frontend Developer, Backend Developer, Mobile Developer,Fullstack Developer"
+    />
+    <meta property="fb:app_id" content="998867785208658" />
+    <meta property="og:title" content="Oscar Chavesta" data-rh="true" />
+    <meta
+      property="og:description"
+      content="Fullstack Developer"
+      data-rh="true"
+    />
+    <meta
+      property="og:image"
+      content="assets/lib/assets/images/og-image.png"
+      data-rh="true"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Oscar Chavesta" />
+    <meta name="twitter:description" content="Fullstack Developer" />
+    <meta
+      name="twitter:image"
+      content="assets/lib/assets/images/og-image.png"
+    />
+
+    <title>Oscar Chavesta</title>
     <link rel="manifest" href="manifest.json" />
 
     <script>
       // The value below is injected by flutter build, do not touch.
-      const serviceWorkerVersion = "4181866151";
+      const serviceWorkerVersion = "1341932775";
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
@@ -54,6 +83,16 @@
           },
         });
       });
+    </script>
+
+    <script>
+      const regExp = new RegExp(
+        "bot|google|baidu|bing|msn|teoma|slurp|yandex",
+        "i"
+      );
+      if (regExp.test(navigator.userAgent)) {
+        window.flutterWebRenderer = "html";
+      }
     </script>
   </body>
 </html>
