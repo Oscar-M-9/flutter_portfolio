@@ -23,17 +23,8 @@ jobs:
           pub-cache-key: "flutter-pub:os:-:channel:-:version:-:arch:-:hash:"
           pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"
 
-      - name: Verify Flutter version
-        run: flutter --version
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Build Flutter web app
-        run: flutter build web --web-renderer canvaskit
-
       - name: Deploy to GitHub Pages
-        uses: bluefireteam/flutter-gh-pages@v8
+        uses: bluefireteam/flutter-gh-pages@v7
         with:
           baseHref: /flutter_portfolio/
           webRenderer: canvaskit
