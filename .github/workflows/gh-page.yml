@@ -24,9 +24,9 @@ jobs:
           pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"
 
       - name: Deploy to GitHub Pages
-        uses: bluefireteam/flutter-gh-pages@v7
+        uses: bluefireteam/flutter-gh-pages@v8
         with:
-          baseHref: /flutter_portfolio/
+          baseHref: "/flutter_portfolio/"
           webRenderer: canvaskit
 # References
 # https://github.com/codetricity/dot_guide_pano/blob/main/.github/workflows/gh-pages.yaml
