@@ -21,32 +21,6 @@ class FooterView extends StatelessWidget {
             height: 50,
             child: LogoWeb(),
           ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     Column(
-          //       crossAxisAlignment: CrossAxisAlignment.end,
-          //       children: [
-          //         AutoSizeText(
-          //           'OSMI',
-          //           style: Theme.of(context).textTheme.titleLarge,
-          //         ),
-          //         AutoSizeText(
-          //           'dev',
-          //           style: Theme.of(context).textTheme.bodyLarge,
-          //         ),
-          //       ],
-          //     ),
-          //     const SquareBorder(
-          //       margin: EdgeInsets.only(left: 5),
-          //       height: 50,
-          //       width: 50,
-          //       borderRadius: BorderRadius.only(
-          //         bottomRight: Radius.circular(30),
-          //       ),
-          //     ),
-          //   ],
-          // ),
           const SizedBox(
             height: 20,
           ),

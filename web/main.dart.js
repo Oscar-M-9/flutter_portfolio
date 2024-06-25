@@ -84950,7 +84950,7 @@ return A.a([A.uB("Cyber Secure",A.vn(q,6,5,0,0,0,0),"Con el aumento de las amena
 s($,"aJN","aux",()=>A.eO("https://github.com/oscar-m-9",0,null))
 s($,"aJP","auz",()=>A.eO("https://www.linkedin.com/in/oscar-chavesta/",0,null))
 s($,"aJM","auw",()=>A.eO("https://www.facebook.com/OsmiTecOficial?mibextid=ZbWKwL",0,null))
-s($,"aJO","auy",()=>A.eO("https://www.instagram.com/oscar_chavesta?igsh=MnVmMmhnNTh0c21k",0,null))
+s($,"aJO","auy",()=>A.eO("https://www.instagram.com/flutter_app?igsh=MnVmMmhnNTh0c21k",0,null))
 s($,"aJQ","auA",()=>A.eO("https://wa.link/9tu48x",0,null))
 s($,"aOg","axl",()=>new A.a47(A.w(t.N,A.a8("af<cb?>?(cb?)"))))
 s($,"aKj","auO",()=>new A.ad3(A.a([new A.QL(A.hM(t.ob,A.a8("wM<e5,kA<D,@,@>>")))],A.a8("t<QL>")),A.aod(t.z)))

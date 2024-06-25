@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/locator.dart';
-import 'package:flutter_app/web/router/route_name.dart';
-import 'package:flutter_app/web/services/navigation_service.dart';
 import 'package:flutter_app/web/utils/colors_app.dart';
+import 'package:flutter_app/web/utils/constants_app.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CircularPulsingButton extends StatefulWidget {
   const CircularPulsingButton({super.key});
@@ -38,7 +37,8 @@ class CircularPulsingButtonState extends State<CircularPulsingButton>
   }
 
   void _onPressed() {
-    locator<NavigationService>().navigateTo(RouteNameApp.contact);
+    // locator<NavigationService>().navigateTo(RouteNameApp.contact);
+    launchUrl(ConstansApp.urlWhatsapp);
   }
 
   @override
