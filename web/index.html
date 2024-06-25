@@ -67,32 +67,54 @@
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="loading/style.css" />
+    <script src="loading/update_progress.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
   </head>
   <body>
+    <div class="container">
+      <div>
+        <img
+          class="mask-image"
+          src="assets/lib/assets/images/Anthony-Edward-Tony-Stark.png"
+          width="100"
+          height="120"
+          alt="Logo"
+        />
+      </div>
+      <div class="progress-bar__container">
+        <div class="progress-bar">
+          <span class="progress-bar__text" id="loading">Loading...</span>
+        </div>
+      </div>
+    </div>
     <script>
       window.addEventListener("load", function (ev) {
+        //  ----------
+        var loading = document.querySelector("#loading");
+        loading.textContent = "Running app...";
+        updateProgress(55);
+        //  ----------
         // Download main.dart.js
         _flutter.loader.loadEntrypoint({
           serviceWorker: {
             serviceWorkerVersion: serviceWorkerVersion,
           },
-          onEntrypointLoaded: function (engineInitializer) {
-            engineInitializer.initializeEngine().then(function (appRunner) {
-              appRunner.runApp();
-            });
+          onEntrypointLoaded: async function (engineInitializer) {
+            loading.textContent = "Running app...";
+            updateProgress(80);
+            let appRunner = await engineInitializer.initializeEngine();
+            updateProgress(90);
+            loading.textContent = "Running app...";
+            await appRunner.runApp();
+            updateProgress(100);
+            // engineInitializer.initializeEngine().then(function (appRunner) {
+            //   appRunner.runApp();
+            // });
           },
         });
       });
-    </script>
-
-    <script>
-      const regExp = new RegExp(
-        "bot|google|baidu|bing|msn|teoma|slurp|yandex",
-        "i"
-      );
-      if (regExp.test(navigator.userAgent)) {
-        window.flutterWebRenderer = "html";
-      }
     </script>
   </body>
 </html>
