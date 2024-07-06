@@ -102,7 +102,7 @@ class _CardServiceWidgetState extends State<CardServiceWidget> {
                         ),
                       ),
                       overlayColor:
-                          const MaterialStatePropertyAll(ColorsApp.appYellow)),
+                          const WidgetStatePropertyAll(ColorsApp.appYellow)),
                   onPressed: widget.onPressed,
                   icon: Icon(
                     Icons.arrow_forward_rounded,

@@ -71,7 +71,7 @@ class SocialButton extends StatelessWidget {
           color: ColorsApp.appYellow,
         ),
         style: ButtonStyle(
-          overlayColor: MaterialStatePropertyAll(
+          overlayColor: WidgetStatePropertyAll(
             ColorsApp.appYellow.withOpacity(.2),
           ),
         ),

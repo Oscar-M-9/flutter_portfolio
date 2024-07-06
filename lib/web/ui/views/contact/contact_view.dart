@@ -124,18 +124,18 @@ class ContactView extends StatelessWidget {
                               }
                             },
                             style: ButtonStyle(
-                              backgroundColor: const MaterialStatePropertyAll(
+                              backgroundColor: const WidgetStatePropertyAll(
                                   ColorsApp.appYellow),
                               side: MaterialStateProperty.all(
                                 const BorderSide(
                                   color: ColorsApp.appYellow,
                                 ),
                               ),
-                              padding: const MaterialStatePropertyAll(
+                              padding: const WidgetStatePropertyAll(
                                 EdgeInsets.symmetric(
                                     vertical: 20, horizontal: 30),
                               ),
-                              overlayColor: const MaterialStatePropertyAll(
+                              overlayColor: const WidgetStatePropertyAll(
                                   ColorsApp.colorRajah600),
                             ),
                             child: Text(
