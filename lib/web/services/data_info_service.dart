@@ -11,7 +11,6 @@ class DataInfoService extends ChangeNotifier {
   Future loadDataInfo() async {
     String jsonString = await _loadData();
     final jsonResponse = json.decode(jsonString);
-    print(jsonResponse);
     return jsonResponse;
   }
 }

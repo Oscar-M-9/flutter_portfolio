@@ -39,14 +39,6 @@ class FooterView extends StatelessWidget {
                 icon: SocialIcons.facebook,
                 onPressed: () => _launchURL(context, ConstansApp.urlFacebook),
               ),
-              SocialButton(
-                icon: SocialIcons.instagram,
-                onPressed: () => _launchURL(context, ConstansApp.urlInstagram),
-              ),
-              SocialButton(
-                icon: SocialIcons.whatsapp,
-                onPressed: () => _launchURL(context, ConstansApp.urlWhatsapp),
-              ),
             ],
           )
         ],

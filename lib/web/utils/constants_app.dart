@@ -207,7 +207,4 @@ class ConstansApp {
       Uri.parse('https://www.linkedin.com/in/oscar-chavesta/');
   static final Uri urlFacebook =
       Uri.parse('https://www.facebook.com/OsmiTecOficial?mibextid=ZbWKwL');
-  static final Uri urlInstagram = Uri.parse(
-      'https://www.instagram.com/oscar_chavesta?igsh=MnVmMmhnNTh0c21k');
-  static final Uri urlWhatsapp = Uri.parse('https://wa.link/9tu48x');
 }
