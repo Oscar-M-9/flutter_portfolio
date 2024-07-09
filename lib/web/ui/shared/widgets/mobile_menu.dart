@@ -56,6 +56,8 @@ class MobileMenuExpanded extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final brightness = MediaQuery.of(context).platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
     return ConstrainedBox(
       constraints: const BoxConstraints(
         minWidth: 200,
@@ -63,7 +65,7 @@ class MobileMenuExpanded extends StatelessWidget {
       child: GlassMorphism(
         blur: 10,
         opacity: 0.6,
-        color: ColorsApp.appLight,
+        color: isDarkMode ? ColorsApp.appDark.withOpacity(.8) : ColorsApp.appLight,
         borderRadius: BorderRadius.circular(5),
         child: Padding(
           padding: const EdgeInsets.symmetric(
