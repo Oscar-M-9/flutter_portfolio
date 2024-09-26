@@ -41,7 +41,7 @@ jobs:
         uses: bluefireteam/flutter-gh-pages@v8
         with:
           baseHref: /flutter_portfolio/
-          webRenderer: canvaskit
+          webRenderer: html
 # References
 # https://github.com/codetricity/dot_guide_pano/blob/main/.github/workflows/gh-pages.yaml
 # https://github.com/subosito/flutter-action

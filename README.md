@@ -1,6 +1,6 @@
 # Oscar Chavesta
 
-A new Flutter project.
+A new Flutter project portfolio.
 
 ## Getting Started
 
