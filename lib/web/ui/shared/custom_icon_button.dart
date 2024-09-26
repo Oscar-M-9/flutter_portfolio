@@ -13,6 +13,8 @@ class CustomIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final brightness = MediaQuery.of(context).platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 3.0,
@@ -38,6 +40,7 @@ class CustomIconButton extends StatelessWidget {
             child: Icon(
               icon,
               key: ValueKey(icon == Icons.close_rounded ? 'icon1' : 'icon2'),
+              color: isDarkMode ? ColorsApp.appLight : ColorsApp.appDark,
             ),
           ),
         ),
@@ -47,21 +50,21 @@ class CustomIconButton extends StatelessWidget {
 
   ButtonStyle _buttonStyle() {
     return ButtonStyle(
-      overlayColor: MaterialStateProperty.resolveWith<Color?>(
-        (Set<MaterialState> states) {
-          if (states.contains(MaterialState.hovered)) {
+      overlayColor: WidgetStateProperty.resolveWith<Color?>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.hovered)) {
             return Colors.transparent;
-          } else if (states.contains(MaterialState.pressed)) {
+          } else if (states.contains(WidgetState.pressed)) {
             return Colors.grey.withOpacity(0.9);
-          } else if (states.contains(MaterialState.selected)) {
+          } else if (states.contains(WidgetState.selected)) {
             return ColorsApp.appGray;
           }
           return null;
         },
       ),
-      side: MaterialStateProperty.resolveWith<BorderSide?>(
-        (Set<MaterialState> states) {
-          if (states.contains(MaterialState.hovered)) {
+      side: WidgetStateProperty.resolveWith<BorderSide?>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.hovered)) {
             return const BorderSide(
               color: ColorsApp.colorRajah300,
               width: 1.0,
@@ -70,24 +73,24 @@ class CustomIconButton extends StatelessWidget {
           return BorderSide.none; // Default border color
         },
       ),
-      foregroundColor: MaterialStateProperty.resolveWith<Color?>(
-        (Set<MaterialState> states) {
-          if (states.contains(MaterialState.hovered)) {
+      foregroundColor: WidgetStateProperty.resolveWith<Color?>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.hovered)) {
             return ColorsApp.colorRajah400;
           }
           // return ColorsApp.colorRajah950.withOpacity(.5);
           return ColorsApp.appDark;
         },
       ),
-      backgroundColor: MaterialStateProperty.resolveWith(
+      backgroundColor: WidgetStateProperty.resolveWith(
         (states) => Colors.transparent,
       ),
-      padding: MaterialStateProperty.resolveWith(
+      padding: WidgetStateProperty.resolveWith(
         (states) => const EdgeInsets.symmetric(
           horizontal: 8,
         ),
       ),
-      minimumSize: MaterialStateProperty.resolveWith(
+      minimumSize: WidgetStateProperty.resolveWith(
         (states) => const Size(50, 20),
       ),
     );
